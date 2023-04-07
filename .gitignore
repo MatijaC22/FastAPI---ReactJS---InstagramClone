@@ -1,0 +1,11 @@
+# ignore log files
+*.log
+
+# ignore a directory called "venv"
+venv/
+
+
+
+
+# ignore a file called "secrets.json"
+secrets.json 
