@@ -9,3 +9,5 @@ venv/
 
 # ignore a file called "secrets.json"
 secrets.json 
+
+.space

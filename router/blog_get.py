@@ -10,13 +10,20 @@ router = APIRouter(
 
 
 @router.get(
-        '/all', 
-        summary="Retrieve all blogs", 
-        description='This api call simulates fetching all blogs',
-        response_description='bla bla bla is reponse description'
+    '/all', 
+    summary="Retrieve all blogs", 
+    description='This api call simulates fetching all blogs',
+    response_description='bla bla bla is reponse description'
 )
-def get_all_blogs(page = 1 , page_size: Optional[int] = None, req_parameter: dict = Depends(required_functionality)):
-    return {"message": f'All {page_size} logged on page {page}', 'req' : req_parameter }
+def get_all_blogs(
+    page = 1 , 
+    page_size: Optional[int] = None, 
+    req_parameter: dict = Depends(required_functionality)
+):
+    return {
+        "message": f'All {page_size} logged on page {page}', 
+        'req' : req_parameter 
+        }
 
 @router.get('/{id}/comments/{commet_id}', tags = ['comment'])
 def get_comment(id: int, comment_id:int, valid: bool = True, username:Optional[str] = None):
